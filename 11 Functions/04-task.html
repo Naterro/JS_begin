@@ -14,6 +14,9 @@
         Сделайте, чтобы сценарий заработал. Код генерации случайного значения найдите с помощью поисковой системы или в заданиях из прошлых уроков.
     </pre>
     <script>
+        function random(min,max){
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
         let throwCount = +prompt("Сколько раз вы хотите бросить шестигранный кубик");
 
         for (let i = 0; i < throwCount; i++) {

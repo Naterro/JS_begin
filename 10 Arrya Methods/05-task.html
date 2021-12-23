@@ -27,10 +27,20 @@
         prices[2] = 12.50;  // Ручка шариковая синяя
 
         let count = [];
-        count[0] = 2;   // Бумага офисная А4, 80 г/м2, 500 л
-        count[1] = 10;  // Биндеры для бумаги 51 мм
-        count[2] = 10;  // Ручка шариковая синяя
+        count[0] = prompt("Бумага офисная А4");   // Бумага офисная А4, 80 г/м2, 500 л
+        count[1] = prompt("Биндеры для бумаги");  // Биндеры для бумаги 51 мм
+        count[2] = prompt("Ручка шариковая синяя");  // Ручка шариковая синяя
+        let totalSum = 0;
+        for (let i = 0; i < names.length; i++) {
+            const productName = names[i];
+            const productPrice = prices[i];
+            const boughtCount = count[i];
 
+            let price = productPrice * boughtCount;
+            totalSum += price;
+            console.log(`Куплено ${productName} на сумму ${price}`);
+        }
+        console.log("Всего продуктов куплено на " + totalSum);
     </script>
 </body>
 

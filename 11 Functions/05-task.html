@@ -11,7 +11,25 @@
         Создайте функцию, которая принимает массив значений и возвращает массив с дублирующимися значениями или null если повторяющихся значений в массиве нет.
     </pre>
     <script>
-        
+        function task(arr){
+            let dublicates=[];
+            for (let i=0;i<arr.length;i++){
+                for (let j=i+1;j<arr.length;j++){
+                if (arr[i]==arr[j]){
+                    dublicates = arr[i];
+                }
+                }
+            }
+            if(!dublicates.length>0){
+                return dublicates;
+            }
+            else {
+                return null;
+            }
+        }
+
+        console.log(task([1,2,2,2,3,4,5]))
+
     </script>
 </body>
 </html>

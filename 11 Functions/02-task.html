@@ -12,7 +12,23 @@
         Если параметр отсутствует - не используйте значение для расчета среднего арифметического значения.
     </pre>
     <script>
-        
+            function avg(a,b,c) {
+                let count = 0;
+                let sum=0
+                if (a){
+                    sum+=a;
+                    count++;
+                }
+                if (b){
+                    sum+=b;
+                    count++;
+                }
+                if (c){
+                    sum+=c;
+                    count++;
+                }
+                return sum/count;
+            }
     </script>
 </body>
 </html>

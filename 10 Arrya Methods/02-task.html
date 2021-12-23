@@ -13,7 +13,17 @@
         После того, как пользователь ввел значение стоп, посчитайте сумму всех значений, которые находятся в массиве.
     </pre>
     <script>
-        
+        let arr = [];
+        do {
+            let input = prompt("input");
+            if (!isNaN(input)) {
+                arr.push(input);
+            }
+        }
+        while (input!="stop")
+        let sum = 0;
+        for (let i=0;i<arr.length;i++) sum +=arr[i];
+        console.log(sum);
     </script>
 </body>
 </html>

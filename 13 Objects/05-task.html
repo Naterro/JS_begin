@@ -17,6 +17,7 @@
         3) Компанию пользователя с наибольшим балансом и компанию пользователя с наименьшим балансом (свойства company и balance)
     </pre>
     <script>
+
         // массив сгенерирован с помощью https://next.json-generator.com/
         let users = [
             {
@@ -454,6 +455,38 @@
                 favoriteFruit: 'apple'
             }
         ];
+        let min =[] ;
+        min[0]=users[0].balance;
+        let max =[];
+        for (let user of users){
+            console.log(user.email);
+            user.friends_count = user.friends.length;
+            if (user.balance>max) {
+                max[0] =user.balance
+                max[1]=user.company;
+            }
+            if (user.balance<min) {
+                min[0] =user.balance
+                min[1]=user.company;
+            }
+        }
+        let sorted_friends=users;
+        for(let j=0;j<sorted_friends.length;j++) {
+            for(let i = 0; i < sorted_friends.length-1; i++) {
+
+                if(sorted_friends[i].friends_count<sorted_friends[i+1].friends_count) {
+                    let temp = sorted_friends[i];
+                    sorted_friends[i] = sorted_friends[i+1];
+                    sorted_friends[i+1] = temp;
+                }
+            }
+        }
+        for (let user of sorted_friends) {
+            console.log(`${user.name.first} ${user.name.last} - ${user.friends_count}`);
+        }
+        console.log(max)
+        console.log(min)
+
     </script>
 </body>
 
