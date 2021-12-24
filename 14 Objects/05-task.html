@@ -497,7 +497,24 @@
 
         function showMostFavoritedFruit()
         {
-            
+            let fruits = {};
+            users.forEach(user => {
+                if(fruits[user.favoriteFruit]){
+                    fruits[user.favoriteFruit]++
+                }
+                else {
+                    fruits[user.favoriteFruit]=1;
+                }
+            });
+            let maxCount = Number.MIN_VALUE;
+            let favoriteFruit = "";
+            for (let fruit in fruits){
+                if (fruits[fruit]>maxCount){
+                    maxCount = fruits[fruit];
+                    favoriteFruit = fruit + ` - kolvo - ${maxCount}`;
+                }
+            }
+            console.log(favoriteFruit)
         }
 
         showAllEmails();

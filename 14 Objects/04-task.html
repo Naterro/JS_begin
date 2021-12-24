@@ -13,19 +13,20 @@
         Используйте shorthand методы и shorthand свойства.        
     </pre>
     <script>
-        let obj1 = {
-            firstName: "Ivan",
-            lastName: "Ivanov"
-        };
+        let obj1 = createObj("Ivan","Ivanov")
 
-        let obj2 = {
-            firstName: "Jhon",
-            lastName: "Doe"
-        };
 
-        function print(obj) {
-            console.log("First Name: " + obj.firstName);
-            console.log("Last Name: " + obj.lastName);
+        let obj2 = createObj("Jhon", "Doe")
+   
+        function createObj (firstName , lastName){
+            return {
+                firstName,
+                lastName,
+                print(obj) {
+                    console.log("First Name: " + this.firstName);
+                    console.log("Last Name: " + this.lastName);
+                }
+            }
         }
 
         print(obj1);
